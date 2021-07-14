@@ -15,3 +15,18 @@ def count_bits(x):
 
 for i in range(20):
     print("Number is {}, binary is {} and bit-count is {}".format(i,number_to_binary(i),count_bits(i)))
+
+
+# Fun Shuffle
+import random
+A = [  "Mickey",
+        "John",
+        "Mick",
+        "Snow",
+        "Sheldon",
+        "Vijay",
+        "Gomba"
+]
+
+random.shuffle(A)
+print(A)
