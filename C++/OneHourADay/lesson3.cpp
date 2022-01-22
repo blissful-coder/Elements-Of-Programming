@@ -1,7 +1,7 @@
 #include <iostream>
  2: using namespace std;
  3:
- 4: void MultiplyNumbers ()
+4: void MultiplyNumbers ()
  5: {
  6:    cout << “Enter the first number: “;
  7:    int firstNumber = 0;
