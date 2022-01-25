@@ -10,11 +10,12 @@ int main(int argc, char* argv[])
 {
     FILE *fptr1 = NULL;
     FILE *fptr2 = NULL;
+    const char temp_file[] = "temp_cleanup";
     // Argument Hendling
     if(argc==2){
         printf("Cleaning File: %s\n", argv[1]);
         fptr1 = fopen(argv[1],"r+");
-        fptr2 = fopen("temp_cleanup","r+");
+        fptr2 = fopen(temp_file,"w+");
     }
     else{
         printf("\nIncorrect number of arguments.");
@@ -35,7 +36,7 @@ int main(int argc, char* argv[])
         
         if(copy_and_write(fptr2,fptr1,total_lines)==total_lines){
             printf("\nOperation Complete. Deleting temporary file.");
-            // TODO
+            remove(temp_file);
         }
         else{
             printf("\nFailed to complete the final operation. Check temporary file: [temp_cleanup]");
