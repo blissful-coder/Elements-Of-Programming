@@ -1,2 +1,4 @@
 clean:
-	rm -rf */a.out
+	$(info #### Deleting Files ####)
+	@rm -rvf */a.out
+	@rm -rvf a.out
