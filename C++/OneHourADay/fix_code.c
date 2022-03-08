@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     }
     else{
         printf("\nIncorrect number of arguments.");
-        printf("\nUsage ./clean_file <source_filename> <target_filename>");
+        printf("\nUsage ./clean_file <source_filename>");
         printf("\nProgram will now exit.");
         return -1;
     }
