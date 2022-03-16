@@ -127,7 +127,7 @@ func Example_sPath() {
 			// fmt.Println(i, s)
 			if path[i] > 0 {
 				if val, ok := weightInfo[int(s-1)]; ok {
-					// fmt.Println("Alread Present ", val)
+					// fmt.Println("Already Present ", val)
 					// addhere := val[int(s)]
 					vertexToAdd := fmt.Sprintf("%q", toChar(i))
 					val[vertexToAdd] = true
