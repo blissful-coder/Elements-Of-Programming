@@ -120,8 +120,8 @@ func Example_sPath() {
 	result := make(map[string]map[int]map[string]bool)
 	for v := 0; v < n; v++ {
 		path, distance := graph.ShortestPaths(gT, v)
-		// fmt.Printf("For Vertex: %q\n", toChar(v))
-		// fmt.Println(path, distance)
+		fmt.Printf("For Vertex: %q\n", toChar(v))
+		fmt.Println(path, distance)
 		weightInfo := make(map[int]map[string]bool)
 		for i, s := range distance {
 			// fmt.Println(i, s)
