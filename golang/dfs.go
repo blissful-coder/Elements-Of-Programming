@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"sort"
 
 	"github.com/yourbasic/graph"
@@ -113,43 +114,35 @@ func Example_sPath() {
 	g.AddCost(1, 2, 1)
 	g.AddCost(2, 3, 1)
 	g.AddCost(4, 5, 1)
+	// g.AddCost(3, 4, 1)
 
 	gT := graph.Transpose(g)
-	//"D": {0: {"C": true}, 1: {"A": true, "B": true}}
-	n := g.Order() // Order returns the number of vertices.
+
+	n := g.Order()
+	fmt.Println(gT)
 	result := make(map[string]map[int]map[string]bool)
 	for v := 0; v < n; v++ {
 		path, distance := graph.ShortestPaths(gT, v)
-		fmt.Printf("For Vertex: %q\n", toChar(v))
+		fmt.Println("For Vertex: ", indexToVertex(v))
 		fmt.Println(path, distance)
 		weightInfo := make(map[int]map[string]bool)
 		for i, s := range distance {
-			// fmt.Println(i, s)
 			if path[i] > 0 {
 				if val, ok := weightInfo[int(s-1)]; ok {
-					// fmt.Println("Already Present ", val)
-					// addhere := val[int(s)]
-					vertexToAdd := fmt.Sprintf("%q", toChar(i))
+					vertexToAdd := indexToVertex(i)
 					val[vertexToAdd] = true
 				} else {
 					temp2 := make(map[string]bool)
-					vertexToAdd := fmt.Sprintf("%q", toChar(i))
-					// fmt.Printf("%q", toChar(i))
+					vertexToAdd := indexToVertex(i)
 					temp2[vertexToAdd] = true
 					weightInfo[int(s-1)] = temp2
 				}
 			}
 		}
-		currentVertex := fmt.Sprintf("%q", toChar(v))
+		currentVertex := indexToVertex(v)
 		result[currentVertex] = weightInfo
-		// m is a map[string]interface.
-		// loop over keys and values in the map.
-		// A: {1:{B:true,C:true}, 2: {D:true}}
+
 	}
-	// fmt.Println("\n\nResult:")
-	// for k, v := range result {
-	// 	fmt.Println(k, " : ", v)
-	// }
 
 	keys := make([]string, 0, len(result))
 	for k := range result {
@@ -160,10 +153,31 @@ func Example_sPath() {
 	for _, k := range keys {
 		fmt.Println(k, ":", result[k])
 	}
+	fmt.Println(result)
+
+	testval :=
+		map[string]map[int]map[string]bool{
+			"A": {},
+			"B": {0: {"A": true}},
+			"C": {0: {"A": true, "B": true}},
+			"D": {0: {"C": true}, 1: {"A": true, "B": true}},
+			"E": {},
+			"F": {0: {"E": true}},
+		}
+
+	fmt.Println(testval)
+
+	if !reflect.DeepEqual(testval, result) {
+		fmt.Printf("results do not match: \nwant = \"%+v\"\ngot =  \"%+v\"", testval, result)
+	} else {
+		fmt.Println("SUCCESS")
+	}
 }
 
-func toChar(i int) rune {
-	return rune('A' + i)
+func indexToVertex(i int) string {
+	//return string(rune('A' + i))
+	myList := [6]string{"A", "B", "C", "D", "E", "F"}
+	return myList[i]
 }
 
 // var scenarios = []scenario{
