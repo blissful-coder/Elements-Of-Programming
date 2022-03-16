@@ -126,7 +126,7 @@ func Example_sPath() {
 		for i, s := range distance {
 			// fmt.Println(i, s)
 			if path[i] > 0 {
-				if val, ok := weightInfo[int(s)]; ok {
+				if val, ok := weightInfo[int(s-1)]; ok {
 					// fmt.Println("Alread Present ", val)
 					// addhere := val[int(s)]
 					vertexToAdd := fmt.Sprintf("%q", toChar(i))
@@ -136,7 +136,7 @@ func Example_sPath() {
 					vertexToAdd := fmt.Sprintf("%q", toChar(i))
 					// fmt.Printf("%q", toChar(i))
 					temp2[vertexToAdd] = true
-					weightInfo[int(s)] = temp2
+					weightInfo[int(s-1)] = temp2
 				}
 			}
 		}
