@@ -114,7 +114,7 @@ func Example_sPath() {
 	g.AddCost(1, 2, 1)
 	g.AddCost(2, 3, 1)
 	g.AddCost(4, 5, 1)
-	// g.AddCost(3, 4, 1)
+	g.AddCost(3, 4, 1)
 
 	gT := graph.Transpose(g)
 
