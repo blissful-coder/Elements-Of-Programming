@@ -114,7 +114,7 @@ func Example_sPath() {
 	g.AddCost(1, 2, 1)
 	g.AddCost(2, 3, 1)
 	g.AddCost(4, 5, 1)
-	g.AddCost(3, 4, 1)
+	// g.AddCost(3, 4, 1)
 
 	gT := graph.Transpose(g)
 
@@ -128,14 +128,18 @@ func Example_sPath() {
 		weightInfo := make(map[int]map[string]bool)
 		for i, s := range distance {
 			if path[i] > 0 {
+				vertexToAdd := indexToVertex(i)
+				//check if current weightgroup is already present
 				if val, ok := weightInfo[int(s-1)]; ok {
-					vertexToAdd := indexToVertex(i)
+					// if weight is already precent, append new vertex to it
+					// {1:{A:true}} becomes {1:{A:true, B:true}}
 					val[vertexToAdd] = true
 				} else {
-					temp2 := make(map[string]bool)
-					vertexToAdd := indexToVertex(i)
-					temp2[vertexToAdd] = true
-					weightInfo[int(s-1)] = temp2
+					// else add new weight and vertex to weightInfo map
+					// {1:{A:true}} becomes {1:{A:true}, 2:{B:true}}
+					newVertexEntry := make(map[string]bool)
+					newVertexEntry[vertexToAdd] = true
+					weightInfo[int(s-1)] = newVertexEntry
 				}
 			}
 		}
