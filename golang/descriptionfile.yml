@@ -1,0 +1,17 @@
+---MACHINE-GENERATED---
+```yaml
+commitHash: c64bd1aca93580b91adc3009b32b45853bd5494e
+component: ml-tracking
+version: 1.38.2
+changeOwners:
+  - I323878
+  - I524762
+releaseNotes:
+  - api: add timestamp for compliance ([c64bd1a](https://github.wdf.sap.corp/AI/ml-tracking/commit/c64bd1aca93580b91adc3009b32b45853bd5494e))
+  - api: add timestamp for compliance ([9620631](https://github.wdf.sap.corp/AI/ml-tracking/commit/96206312cdc96d028fbaf8b3cc98d0b2aed4c8c3))
+  - ci: revert jenkinsfile change ([b1c571f](https://github.wdf.sap.corp/AI/ml-tracking/commit/b1c571f6302c79064fe64bbfd2c549d3b9c65791))
+  - ci: send additional information to gitops ([3642786](https://github.wdf.sap.corp/AI/ml-tracking/commit/36427861c9e88cdf89d561a16d06bb3fb1b626a8))
+  - fix: send additional information to gitops ([3642786](https://github.wdf.sap.corp/AI/ml-tracking/commit/36427861c9e88cdf89d561a16d06bb3fb1b626a8))
+  - chore: send additional information to gitops ([3642786](https://github.wdf.sap.corp/AI/ml-tracking/commit/36427861c9e88cdf89d561a16d06bb3fb1b626a8))
+```
+---MACHINE-GENERATED-END---
