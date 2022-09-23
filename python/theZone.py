@@ -9,15 +9,6 @@ from datetime import datetime
 from time import sleep
 import subprocess
 
-import tkinter
-root = tkinter.Tk()
-screen_width = root.winfo_screenwidth()
-screen_height = root.winfo_screenheight()
-canvas = tkinter.Canvas(root, width= screen_width, height = screen_height, background="black")
-canvas.pack()
-active_rect = canvas.create_rectangle(100, 100, 200, 200, fill="blue")
-print(active_rect)
-
 def exec_applescript(script):
     p = subprocess.Popen(['osascript', '-e', script],stdout=subprocess.PIPE)
     line = p.stdout.readline()
@@ -36,8 +27,6 @@ while True:
     # active_app = NSWorkspace.sharedWorkspace().frontmostApplication().localizedName()
     active_app = NSWorkspace.sharedWorkspace().activeApplication()
     if active_app['NSApplicationName'] != last_active_name:
-        canvas.delete(active_rect)
-        root.quit()
         last_active_name = active_app['NSApplicationName']
         print("-------------------------------")
         print('%s: %s [%s]' % (
@@ -48,7 +37,6 @@ while True:
         command_for_bounds = generate_command_for_app(active_app['NSApplicationName'])
         print(command_for_bounds)
         exec_applescript(command_for_bounds)
-        root.mainloop()
 
 # tell application "System Events" to ¬
 # 	get {position, size, name} of every window of process "Electron"

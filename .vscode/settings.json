@@ -3,5 +3,6 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "bitset": "cpp"
-    }
+    },
+    "python.formatting.provider": "yapf"
 }
