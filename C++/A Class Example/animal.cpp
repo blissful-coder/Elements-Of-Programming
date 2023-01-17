@@ -7,6 +7,7 @@ Animal::Animal(){
 }
 
 Animal::Animal(std::string name){
+    this->~Animal();
     this->name = name;
 }
 
