@@ -34,7 +34,7 @@ class theFlow(object):
         self.root.bind("<Button-1>", self.drawOnClick)
         self.root.mainloop()
 
-    def prepare_canvas():
+    # def prepare_canvas():
         
 
     def drawOnClick(self, event):
