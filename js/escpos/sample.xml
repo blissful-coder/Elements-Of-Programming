@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <document>
+    <align mode="center">
+      <bold>
+        <text-line size="1:0">{{title}}</text-line>
+      </bold>
+    </align>
+
+    <align mode="center">
+      <text-line size="0:0">  {{thankyouNote}}</text-line>
+    </align>
+
+    <align mode="center">
+      <text-line size="0:0">  {{.}}</text-line>
+    </align>
+
+    <line-feed />
+
+    <paper-cut />
+  </document>

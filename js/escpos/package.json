@@ -1,0 +1,16 @@
+{
+  "name": "escpos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@tillpos/xml-escpos-helper": "^0.2.8",
+    "bleno": "^0.5.0",
+    "escpos": "^3.0.0-alpha.6",
+    "node-escpos": "^0.0.3",
+    "xpc-connection": "^0.1.4"
+  },
+  "scripts": {
+    "print": "node example.js"
+  }
+}
