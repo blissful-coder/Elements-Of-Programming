@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .signup-button {
+            background-color: #387ed1;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 3px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .signup-button:hover, .signup-button.active {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div style="display: flex; padding-top: 8px; padding-bottom: 8px; padding-left: 350px ; padding-right: 350px; justify-content:space-between; box-shadow: 2px 1px 2px #eee; margin-bottom: 100px;">
+    <div style= "padding: 10px; padding-left: 20px; padding-right: 20px;">
+        <img src = "logo.svg" style="max-height: 17px; ">
+    </div>
+    <div style="display: flex; justify-content:space-between">
+        <div style= "padding: 10px; color: #666; cursor: pointer;">
+            Sign Up
+        </div>
+        <div style= "padding: 10px; color: #666; cursor: pointer;">
+            About
+        </div>
+        <div style= "padding: 10px; color: #666; cursor: pointer;">
+            Products
+        </div>
+        <div style= "padding: 10px; color: #666; cursor: pointer;">
+            Pricing
+        </div>
+        <div style= "padding: 10px; color: #666; cursor: pointer;">
+            Support
+        </div>
+        <div style= "padding: 10px; color: #666; cursor: pointer;">
+            <!-- Hamburger Icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div style="display: flex; justify-content:center; margin-bottom: 20px;">
+    <img src="landing.png" style= "max-height: 450px;">
+</div>
+
+<div style="display: flex; justify-content:center;">
+    <div style="font-weight: 1000;  font-size: 2.75rem; color: #424242; font-family:Arial, Helvetica, sans-serif">
+        Invest in everything
+    </div>
+</div>
+</br>
+<div style="display: flex; font-size: 1.25rem; line-height: 1.7; justify-content:center; font-family: Arial, Helvetica, sans-serif;">
+        Online platform to invest in stocks, derivatives, mutual funds, and more
+</div>
+<div style="display: flex; justify-content: center; margin-top: 50px;">
+    <div class="signup-button" style="background-color: #387ed1; color: #fff; padding: 10px 30px; border-radius: 3px; text-align: center; transition: background-color 0.3s;">
+        <a href="/open-account" style="text-decoration: none; color: #fff; display: block; height: 100%;">Sign up now</a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const signupButton = document.querySelector('.signup-button');
+
+        signupButton.addEventListener('mouseenter', function () {
+            this.classList.add('active');
+        });
+
+        signupButton.addEventListener('mouseleave', function () {
+            this.classList.remove('active');
+        });
+    });
+</script>
+</body>
