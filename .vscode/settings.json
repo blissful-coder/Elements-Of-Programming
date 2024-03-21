@@ -76,7 +76,8 @@
         "utility": "cpp",
         "format": "cpp",
         "cinttypes": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "unordered_set": "cpp"
     },
     "python.formatting.provider": "yapf"
 }
