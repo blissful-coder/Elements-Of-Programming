@@ -13,11 +13,26 @@
 using namespace std;
 
 int maxArea(vector<int>& height) {
-    return 0;
+    int len = height.size();
+    int j = len-1;
+    int i = 0;
+    int maxArea = 0;
+    while(i<j){
+        maxArea = max(maxArea, min(height[i],height[j])*(j-i));
+        // cout<<i<<","<<j<<":"<<height[i]<<","<<height[j]<<" ["<<maxArea<<"]"<<endl;
+        if(height[i]<height[j]){
+            i++;
+        }
+        else{
+            j--;
+        }
+    }
+
+    return maxArea;
 }
 
 int main(){
-    vector<int> q={-1,0,1,2,-1,-4};
+    vector<int> q={1,8,6,2,5,4,8,3,7};
     cout<<maxArea(q);
     return 0;
 }
