@@ -77,12 +77,6 @@ void swapKth(lnode* &start, int k){
     temp = tempstart->next; 
     tempstart->next = tempend->next; 
     tempend->next = temp;     
-
-    // FIX ME    
-    // temp = tempend;
-    // tempstart_prev->next = tempend;
-    // tempend_prev->next = temp;
-
 }
 
 int main(){
