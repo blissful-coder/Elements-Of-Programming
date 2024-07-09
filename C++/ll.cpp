@@ -67,9 +67,16 @@ void swapKth(lnode* &start, int k){
     cout<<"\nItems to swap: ["<<tempstart->val<<"] ["<<tempend->val<<"]";
     
     // If you only want to swap the values
-    temp->val = tempend->val;
-    tempend->val = tempstart->val;
-    tempstart->val = temp->val;
+    if (tempstart_prev) 
+        tempstart_prev->next = tempend; 
+    // Same thing applies to y_prev 
+    if (tempend_prev) 
+        tempend_prev->next = tempstart; 
+    // Swap next pointers of x and y. These statements also 
+    // break self loop if x->next is y or y->next is x 
+    temp = tempstart->next; 
+    tempstart->next = tempend->next; 
+    tempend->next = temp;     
 
     // FIX ME    
     // temp = tempend;
